@@ -9,35 +9,51 @@
         If you don't meet the requirments for the progam don't worry we will suggest the next math class you should take to help you continue your journey towards joing us in our program</p>
         <form>
             <select>
-                <!--change value on each option-->
-                <option class="1" value="Basic Math"> Math 081: Basic Math</option>
-                <option class="2" value="Basic Math"> Math 084: Algebra 1</option>
-                <option class="2" value="Basic Math"> Math 085: Algebra 2</option>
-                <option class="2" value="Basic Math"> Math 097: Elementary Algebra</option>
-                <option class="3" value="Basic Math"> Math 099: Essentials of Intermiate Algebra</option>
-                <option class="3" value="Basic Math"> Math 098: Intermiate Algebra</option>
-                <option class="3" value="Basic Math"> AHE 103: Math for Health Carerrs</option>
-                <option class="3" value="Basic Math"> EET 109: Math Applications for Circuit Analysis</option>
-                <option class="4" value="Basic Math"> Math 107: Math in Society</option>
-                <option class="4" value="Basic Math"> Math 146: Elementary Statistics</option>
-                <option class="4" value="Basic Math"> Math 116: Applications of Math</option>
-                <option class="4" value="Basic Math"> Math 141: PreCalculus 1</option>
-                <option class="4" value="Basic Math"> Math 142: Precalculus 2</option>
-                <option class="5" value="Basic Math"> Math 148: Bussniess calculus</option>
-                <option class="5" value="Basic Math"> Math 151: calculus 1</option>
-                <option class="5" value="Basic Math"> Math 152: calculus 2</option>
-                <option class="5" value="Basic Math"> Math 152: calculus 3</option>
-                <option class="6" value="Basic Math"> Math 211: Elements of Statiscal Methods </option>
-                <option class="6" value="Basic Math"> Math 220: Linear algebra</option>
-                <option class="6" value="Basic Math"> Math 238: Differntal equations</option>
-                <option class="6" value="Basic Math"> Math 224: Vector calculus</option>
-                <input type="text" value="submit" onclick="mathChecker()">
+                <option value="Basic Math"> Math 081: Basic Math</option>
+                <option value="Algebra 1"> Math 084: Algebra 1</option>
+                <option value="Algebra 2"> Math 085: Algebra 2</option>
+                <option value="Elementary Algebra"> Math 097: Elementary Algebra</option>
+                <option value="intermediate Algebra"> Math 098: intermediate Algebra</option>
+                <option value="Essentials of intermediate Algebra"> Math 099: Essentials of intermediate Algebra</option>
+                <option value="Math for Health Careers"> AHE 103: Math for Health Careers</option>
+                <option value="Math in Society"> Math 107: Math in Society</option>
+                <option value="Math Applications for Circuit Analysis"> EET 109: Math Applications for Circuit Analysis</option>
+                <option value="Applications of Math"> Math 116: Applications of Math</option>
+                <option value="PreCalculus 1"> Math 141: PreCalculus 1</option>
+                <option value="Precalculus 2"> Math 142: Precalculus 2</option>
+                <option value="Elementary Statistics"> Math 146: Elementary Statistics</option>
+                <option value="Business calculus"> Math 148: Business calculus</option>
+                <option value="calculus 1"> Math 151: calculus 1</option>
+                <option value="calculus 2"> Math 152: calculus 2</option>
+                <option value="calculus 3"> Math 163: calculus 3</option>
+                <option value="Elements of Statiscal Methods"> Math 211: Elements of Statiscal Methods </option>
+                <option value="Linear algebra"> Math 220: Linear algebra</option>
+                <option value="Differntal equations"> Math 238: Differntal equations</option>
+                <option value="Vector calculus"> Math 224: Vector calculus</option>
+                <input type="submit" value="submit" onclick="mathChecker(event)">
             </select >
         </form>
         <p> your next math class should be ????</p>
         <script>
-            function mathChecker(){
-                console.log("hello")
+            const results = {
+                "Basic Math":  {pass: false, suggestions: "Math 097: Elementary Algebra or Algebra 1"},
+                "Algebra 1":   {pass: false, suggestions: "Math 085: Algebra 2"},
+                "Algebra 2":   {pass: false, suggestions: "Math 098: intermediate Algebra"},
+                "Elementary Algebra": {pass: false,suggestions: "Math 098: intermediate Algebra"},
+                "intermediate Algebra": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
+                "Essentials of intermediate Algebra": {pass: false, suggestions: "Math 146: Elementary Statistics"},
+                "Math for Health Careers": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
+                "Math in Society": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
+                "Math Applications for Circuit Analysis": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
+                "Applications of Math": {pass: false, suggestions:"Business calculus"},
+                "PreCalculus 1": {pass: false, suggestions: "PreCalculus 2"},
+                "PreCalculus 2": {pass: false, suggestions:"Calculus"}
+            }
+
+            function mathChecker(event){
+                event.preventDefault()
+                document.getElementsByTagName("select")[0].value
+                debugger
             } 
         </script>
     </body>
