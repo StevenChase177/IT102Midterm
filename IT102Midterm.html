@@ -10,32 +10,35 @@
         <form>
             <select>
                 <!--change value on each option-->
-                <option value="Basic Math"> Math 081: Basic Math</option>
-                <option value="Basic Math"> Math 084: Algebra 1</option>
-                <option value="Basic Math"> Math 085: Algebra 2</option>
-                <option value="Basic Math"> Math 097: Elementary Algebra</option>
-                <option value="Basic Math"> Math 099: Essentials of Intermiate Algebra</option>
-                <option value="Basic Math"> Math 098: Intermiate Algebra</option>
-                <option value="Basic Math"> AHE 103: Math for Health Carerrs</option>
-                <option value="Basic Math"> EET 109: Math Applications for Circuit Analysis</option>
-                <option value="Basic Math"> Math 107: Math in Society</option>
-                <option value="Basic Math"> Math 146: Elementary Statistics</option>
-                <option value="Basic Math"> Math 116: Applications of Math</option>
-                <option value="Basic Math"> Math 141: PreCalculus 1</option>
-                <option value="Basic Math"> Math 142: Precalculus 2</option>
-                <option value="Basic Math"> Math 148: Bussniess calculus</option>
-                <option value="Basic Math"> Math 151: calculus 1</option>
-                <option value="Basic Math"> Math 152: calculus 2</option>
-                <option value="Basic Math"> Math 152: calculus 3</option>
-                <option value="Basic Math"> Math 211: Elements of Statiscal Methods </option>
-                <option value="Basic Math"> Math 220: Linear algebra</option>
-                <option value="Basic Math"> Math 238: Differntal equations</option>
-                <option value="Basic Math"> Math 224: Vector calculus</option>
-                <input type="submit" value="submit">
-            </select>
+                <option class="1" value="Basic Math"> Math 081: Basic Math</option>
+                <option class="2" value="Basic Math"> Math 084: Algebra 1</option>
+                <option class="2" value="Basic Math"> Math 085: Algebra 2</option>
+                <option class="2" value="Basic Math"> Math 097: Elementary Algebra</option>
+                <option class="3" value="Basic Math"> Math 099: Essentials of Intermiate Algebra</option>
+                <option class="3" value="Basic Math"> Math 098: Intermiate Algebra</option>
+                <option class="3" value="Basic Math"> AHE 103: Math for Health Carerrs</option>
+                <option class="3" value="Basic Math"> EET 109: Math Applications for Circuit Analysis</option>
+                <option class="4" value="Basic Math"> Math 107: Math in Society</option>
+                <option class="4" value="Basic Math"> Math 146: Elementary Statistics</option>
+                <option class="4" value="Basic Math"> Math 116: Applications of Math</option>
+                <option class="4" value="Basic Math"> Math 141: PreCalculus 1</option>
+                <option class="4" value="Basic Math"> Math 142: Precalculus 2</option>
+                <option class="5" value="Basic Math"> Math 148: Bussniess calculus</option>
+                <option class="5" value="Basic Math"> Math 151: calculus 1</option>
+                <option class="5" value="Basic Math"> Math 152: calculus 2</option>
+                <option class="5" value="Basic Math"> Math 152: calculus 3</option>
+                <option class="6" value="Basic Math"> Math 211: Elements of Statiscal Methods </option>
+                <option class="6" value="Basic Math"> Math 220: Linear algebra</option>
+                <option class="6" value="Basic Math"> Math 238: Differntal equations</option>
+                <option class="6" value="Basic Math"> Math 224: Vector calculus</option>
+                <input type="text" value="submit" onclick="mathChecker()">
+            </select >
         </form>
-
         <p> your next math class should be ????</p>
-
+        <script>
+            function mathChecker(){
+                console.log("hello")
+            } 
+        </script>
     </body>
 </html>
