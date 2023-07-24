@@ -13,14 +13,14 @@
                 <option value="Algebra 1"> Math 084: Algebra 1</option>
                 <option value="Algebra 2"> Math 085: Algebra 2</option>
                 <option value="Elementary Algebra"> Math 097: Elementary Algebra</option>
-                <option value="intermediate Algebra"> Math 098: intermediate Algebra</option>
-                <option value="Essentials of intermediate Algebra"> Math 099: Essentials of intermediate Algebra</option>
+                <option value="Intermediate Algebra"> Math 098: Intermediate Algebra</option>
+                <option value="Essentials of Intermediate Algebra"> Math 099: Essentials of Intermediate Algebra</option>
                 <option value="Math for Health Careers"> AHE 103: Math for Health Careers</option>
                 <option value="Math in Society"> Math 107: Math in Society</option>
                 <option value="Math Applications for Circuit Analysis"> EET 109: Math Applications for Circuit Analysis</option>
                 <option value="Applications of Math"> Math 116: Applications of Math</option>
                 <option value="PreCalculus 1"> Math 141: PreCalculus 1</option>
-                <option value="Precalculus 2"> Math 142: Precalculus 2</option>
+                <option value="PreCalculus 2"> Math 142: Precalculus 2</option>
                 <option value="Elementary Statistics"> Math 146: Elementary Statistics</option>
                 <option value="Business calculus"> Math 148: Business calculus</option>
                 <option value="calculus 1"> Math 151: calculus 1</option>
@@ -30,31 +30,47 @@
                 <option value="Linear algebra"> Math 220: Linear algebra</option>
                 <option value="Differntal equations"> Math 238: Differntal equations</option>
                 <option value="Vector calculus"> Math 224: Vector calculus</option>
-                <input type="submit" value="submit" onclick="mathChecker(event)">
+                <input type="submit" value="submit" onclick="classChecker(event)">
             </select >
         </form>
-        <p> your next math class should be ????</p>
+        <p id="messageForUser"></p>
         <script>
-            const results = {
-                "Basic Math":  {pass: false, suggestions: "Math 097: Elementary Algebra or Algebra 1"},
+            function classChecker(event){
+                // stops form from submiting post action
+                event.preventDefault()
+                // object that holds if each math class is enough to enter program and suggestions for what class they should take next
+                const results = {
+                "Basic Math":  {pass: false, suggestions: "Math 097: Elementary Algebra or Math 084: Algebra 1"},
                 "Algebra 1":   {pass: false, suggestions: "Math 085: Algebra 2"},
-                "Algebra 2":   {pass: false, suggestions: "Math 098: intermediate Algebra"},
-                "Elementary Algebra": {pass: false,suggestions: "Math 098: intermediate Algebra"},
-                "intermediate Algebra": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
-                "Essentials of intermediate Algebra": {pass: false, suggestions: "Math 146: Elementary Statistics"},
+                "Algebra 2":   {pass: false, suggestions: "Math 098: Intermediate Algebra"},
+                "Elementary Algebra": {pass: false,suggestions: "Math 098: Intermediate Algebra"},
+                "Intermediate Algebra": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
+                "Essentials of Intermediate Algebra": {pass: false, suggestions: "Math 146: Elementary Statistics"},
                 "Math for Health Careers": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
                 "Math in Society": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
                 "Math Applications for Circuit Analysis": {pass: false, suggestions: "Math 146: Elementary Statistics or Math 141: Precalculus"},
-                "Applications of Math": {pass: false, suggestions:"Business calculus"},
-                "PreCalculus 1": {pass: false, suggestions: "PreCalculus 2"},
-                "PreCalculus 2": {pass: false, suggestions:"Calculus"}
+                "Applications of Math": {pass: false, suggestions:"Math 148: Business calculus"},
+                "PreCalculus 1": {pass: false, suggestions: "Math 142: PreCalculus 2"},
+                "PreCalculus 2": {pass: false, suggestions:"Math 151: Calculus"}
             }
 
-            function mathChecker(event){
-                event.preventDefault()
-                document.getElementsByTagName("select")[0].value
-                debugger
+            // creates key based on value submitted in the form    
+            let  key = document.getElementsByTagName("select")[0].value
+                if(results[key]){
+                    writeDoc(results[key].pass, results[key].suggestions)  
+                }else{
+                    // all classes that aren't in results should have the same message so we use this step to skip writing them all out
+                    writeDoc(true,"You have taken enough math classes to enter the Application development program")
+                }
             } 
+            // expects a boolean and a string message 
+            function writeDoc(boolean,string){
+                if(boolean != true){
+                    document.getElementById("messageForUser").innerHTML = `You have not take enought math classes we would suggest ${string}`
+                }else {
+                    document.getElementById("messageForUser").innerHTML = string
+                }
+            }
         </script>
     </body>
 </html>
